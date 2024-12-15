@@ -3,9 +3,11 @@
 @use "mixins";
 
 $black-color: #151515;
+$semibold-font: "Lufga SemiBold", sans-serif;
+$medium-font: "Lufga Medium", sans-serif;
 
 body {
-  font-family: "Lufga Medium", sans-serif;
+  font-family: $medium-font;
   font-weight: 500;
   font-size: 20px;
   color: $black-color;
@@ -105,6 +107,63 @@ body {
   margin: 10px auto;
   border-radius: 20px;
   position: relative;
+  overflow: hidden;
+
+  &__content {
+    @include mixins.flex-center;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+
+    h1 {
+      font-family: $semibold-font;
+      font-size: 48px;
+      letter-spacing: -0.01em;
+      color: #fff;
+      position: absolute;
+      left: 0;
+      top: 30%;
+      transform: translateY(-30%);
+    }
+
+    h2 {
+      font-family: "Lufga Bold", sans-serif;
+      font-size: 341px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #fff;
+      display: flex;
+      line-height: 1;
+
+      & > div {
+        position: relative;
+        z-index: 5;
+
+        &:hover > img {
+          transform: rotate(5deg);
+          transition: 0.3s;
+        }
+
+        & > img {
+          position: absolute;
+          z-index: -1;
+          left: -35px;
+          top: -20px;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+
+  &__text {
+    max-width: 760px;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-top: -15px;
+    margin-left: 100px;
+  }
 
   &__btn {
     position: absolute;
@@ -136,7 +195,7 @@ body {
     }
 
     & > button {
-      font-family: "Lufga SemiBold", sans-serif;
+      font-family: $semibold-font;
       border: 1px solid $black-color;
       border-radius: 32px;
       padding: 33px 59px;
