@@ -608,11 +608,22 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 0 20px;
+
+    @media screen and (max-width: 880px) {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 30px 20px;
+    }
   }
 
   &__content {
     max-width: 292px;
+    min-width: 252px;
     letter-spacing: -0.01em;
+
+    @media screen and (max-width: 880px) {
+      max-width: 50%;
+    }
 
     & > h2 {
       font-weight: 800;
@@ -662,6 +673,10 @@ body {
     font-weight: 600;
     font-size: 36px;
     letter-spacing: -0.01em;
+
+    @media screen and (max-width: 880px) {
+      max-width: 100%;
+    }
   }
 
   &__logo {
