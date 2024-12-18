@@ -7,21 +7,13 @@ const thirdPlant = document.querySelectorAll(".intro__images img")[2];
 const plants = secondPlant.parentElement.parentElement;
 
 plants.onmouseover = () => {
-  secondPlant.parentElement.classList.remove(
-    "intro__descr-notHover"
-  );
-  secondPlant.parentElement.classList.add(
-    "intro__descr-hover"
-  );
+  secondPlant.parentElement.classList.remove("intro__descr-notHover");
+  secondPlant.parentElement.classList.add("intro__descr-hover");
 };
 
 plants.onmouseleave = () => {
-  secondPlant.parentElement.classList.remove(
-    "intro__descr-hover"
-  );
-  secondPlant.parentElement.classList.add(
-    "intro__descr-notHover"
-  );
+  secondPlant.parentElement.classList.remove("intro__descr-hover");
+  secondPlant.parentElement.classList.add("intro__descr-notHover");
 };
 
 const handleMouseLeave = () => {
@@ -34,3 +26,11 @@ const handleMouseLeave = () => {
   };
   plant.onmouseleave = handleMouseLeave;
 });
+
+const menuBtn = document.getElementsByClassName("header__menu")[0];
+const menu = document.getElementsByClassName("header__inner")[0];
+
+menuBtn.onclick = () => {
+  menuBtn.classList.toggle("header__menu-active");
+  menu.classList.toggle("header__inner-active");
+};
