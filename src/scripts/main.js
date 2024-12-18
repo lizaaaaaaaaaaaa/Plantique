@@ -1,4 +1,6 @@
 import "../styles/style.scss";
+import playIcon from '../assets/images/icons/video/play.svg';
+import pauseIcon from '../assets/images/icons/video/pause.svg';
 
 const firstPlant = document.querySelectorAll(".intro__images img")[0];
 const secondPlant = document.querySelectorAll(".intro__images img")[1];
@@ -33,4 +35,21 @@ const menu = document.getElementsByClassName("header__inner")[0];
 menuBtn.onclick = () => {
   menuBtn.classList.toggle("header__menu-active");
   menu.classList.toggle("header__inner-active");
+};
+
+const videoControl = document.getElementsByClassName("for__control")[0];
+const video = document.getElementsByTagName("video")[0];
+
+
+
+videoControl.onclick = () => {
+  if (video.paused) {
+    video.play();
+    videoControl.children[0].src = pauseIcon;
+    videoControl.children[0].alt = "play video";
+  } else {
+    video.pause();
+    videoControl.children[0].src = playIcon;
+    videoControl.children[0].alt = "stop video";
+  }
 };
