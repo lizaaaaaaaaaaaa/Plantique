@@ -1,6 +1,6 @@
 import "../styles/style.scss";
-import playIcon from '../assets/images/icons/video/play.svg';
-import pauseIcon from '../assets/images/icons/video/pause.svg';
+import playIcon from "../assets/images/icons/video/play.svg";
+import pauseIcon from "../assets/images/icons/video/pause.svg";
 
 const firstPlant = document.querySelectorAll(".intro__images img")[0];
 const secondPlant = document.querySelectorAll(".intro__images img")[1];
@@ -40,8 +40,6 @@ menuBtn.onclick = () => {
 const videoControl = document.getElementsByClassName("for__control")[0];
 const video = document.getElementsByTagName("video")[0];
 
-
-
 videoControl.onclick = () => {
   if (video.paused) {
     video.play();
@@ -53,3 +51,22 @@ videoControl.onclick = () => {
     videoControl.children[0].alt = "stop video";
   }
 };
+
+const speciesTabs = Array.from(document.getElementsByClassName("species__btn"));
+const contents = Array.from(
+  document.getElementsByClassName("species__content")
+);
+
+speciesTabs.forEach((tab) => {
+  tab.onclick = () => {
+    contents.forEach((content) =>
+      content.classList.remove("species__content-active")
+    );
+    speciesTabs.forEach((tab) => tab.classList.remove("species__btn-active"));
+
+    const content = document.getElementById(tab.getAttribute("data-button"));
+
+    content.classList.add("species__content-active");
+    tab.classList.add("species__btn-active");
+  };
+});

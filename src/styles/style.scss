@@ -759,6 +759,45 @@ body {
   }
 }
 
+.species {
+  &__tabs {
+    display: flex;
+    gap: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px;
+  }
+
+  &__filters {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__btn {
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: -0.01em;
+    color: #0d0d0d;
+    padding: 12.5px 40px;
+    border: 1px solid #0d0d0d;
+    border-radius: 60px;
+
+    &-active {
+      border: 1px solid #fff;
+      background: #10110e;
+      color: #fff;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &-active {
+      display: block;
+    }
+  }
+}
+
 @keyframes retreatLeftBounce {
   20% {
     transform: translateX(25px);
