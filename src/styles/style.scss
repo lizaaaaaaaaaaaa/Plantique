@@ -223,14 +223,6 @@ body {
   position: relative;
   padding-bottom: 22px;
 
-  @media screen and (max-width: 880px) {
-    padding-bottom: 131px;
-  }
-
-  @media screen and (max-height: 880px) {
-    height: calc(100% - 20px);
-  }
-
   &__inner {
     padding-top: 231px;
     height: calc(100vh - 42px);
@@ -389,10 +381,7 @@ body {
     border-top-left-radius: 32px;
 
     @media screen and (max-width: 820px) {
-      left: -1px;
-      width: calc(100% + 2px);
-      border-radius: 0;
-      text-align: center;
+      display: none;
     }
 
     &::before,
@@ -409,30 +398,12 @@ body {
       bottom: 0px;
       left: -32px;
       box-shadow: 6px 6px 0 5px white;
-
-      @media screen and (max-width: 820px) {
-        bottom: 109px;
-        left: 0;
-        box-shadow: -6px 6px 0 5px white;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 30px;
-      }
-
-      @media screen and (max-width: 460px) {
-        bottom: 96px;
-        left: 1px;
-      }
     }
 
     &::after {
       right: 0;
       bottom: 109px;
       box-shadow: 6px 6px 0 5px white;
-
-      @media screen and (max-width: 460px) {
-        bottom: 96px;
-        right: 1px;
-      }
     }
 
     & > button {
@@ -466,10 +437,6 @@ body {
   &__plants {
     padding-left: 12px;
     display: inline-flex;
-
-    @media screen and (max-width: 820px) {
-      bottom: 134px;
-    }
 
     @media screen and (max-width: 375px) {
       padding-left: 0;
