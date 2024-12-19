@@ -70,3 +70,13 @@ speciesTabs.forEach((tab) => {
     tab.classList.add("species__btn-active");
   };
 });
+
+contents.forEach((content) => {
+  const cards = Array.from(content.children);
+  cards.forEach((card) => {
+    card.onclick = () => {
+      cards.forEach((card) => card.classList.remove("species__card-active"));
+      card.classList.add("species__card-active");
+    };
+  });
+});

@@ -8,7 +8,6 @@ $medium-font: "Lufga Medium", sans-serif;
 
 body {
   font-family: $medium-font;
-  font-weight: 500;
   font-size: 20px;
   color: $black-color;
   background-color: #fff;
@@ -296,7 +295,6 @@ body {
     h2 {
       font-family: "Lufga Bold", sans-serif;
       font-size: 341px;
-      font-weight: 800;
       letter-spacing: -0.01em;
       color: #fff;
       display: flex;
@@ -644,7 +642,7 @@ body {
     }
 
     & > h2 {
-      font-weight: 800;
+      font-family: $semibold-font;
       font-size: 44px;
       padding-bottom: 60px;
       line-height: 1;
@@ -692,8 +690,8 @@ body {
   }
 
   &__descr {
+    font-family: $semibold-font;
     max-width: 686px;
-    font-weight: 600;
     font-size: 36px;
     letter-spacing: -0.01em;
 
@@ -774,7 +772,6 @@ body {
   }
 
   &__btn {
-    font-weight: 500;
     font-size: 25px;
     letter-spacing: -0.01em;
     color: #0d0d0d;
@@ -793,9 +790,147 @@ body {
     display: none;
 
     &-active {
-      display: block;
+      display: flex;
+      gap: 14px;
+    }
+
+    &:first-child > div:nth-child(1) {
+      background-image: url("../assets/images/species/petFriendly.jpg");
+    }
+
+    &:first-child > div:nth-child(2) {
+      background-image: url("../assets/gifs/orchid.gif");
+    }
+
+    &:first-child > div:nth-child(3) {
+      background-image: url("../assets/images/species/succulents.jpg");
     }
   }
+
+  &__card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    padding: 28px 20px 32px;
+    border-radius: 20px;
+    color: #fff;
+    transition: 0.3s;
+    width: 25%;
+    height: 411px;
+    display: grid;
+    align-content: space-between;
+
+    &:hover {
+      filter: none;
+      transition: 0.3s;
+    }
+
+    &-active {
+      width: 50%;
+      filter: none;
+    }
+  }
+
+  &__card-active &__link,
+  &__card-active &__descr {
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.3s, min-width 0s, font-size 0s;
+    pointer-events: all;
+  }
+
+  &__card-active &__link {
+    min-width: 55px;
+  }
+
+  &__card-active &__descr {
+    font-size: 16px;
+  }
+
+  &__card-active &__badge {
+    border: 0.5px solid #b3b3b3;
+    transition: .3s;
+  }
+
+  &__title {
+    padding: 11px 20px;
+    display: flex;
+    gap: 0 10px;
+    justify-content: space-between;
+
+    & > h3 {
+      font-family: "Lufga Bold";
+      font-size: 53px;
+      letter-spacing: -0.01em;
+      word-break: break-word;
+    }
+  }
+
+  &__link {
+    @include mixins.flex-center;
+    min-width: 0;
+    height: 55px;
+    background-color: #fff;
+    border-radius: 50%;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: all 0.3s, visibility 0.1s, min-width 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
+  }
+
+  &__descr {
+    font-family: "Lufga Regular";
+    font-size: 0;
+    padding: 0 20px;
+    margin-top: 35px;
+    letter-spacing: -0.01em;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: all 0.3s, visibility 0.1s;
+  }
+
+  &__footer {
+    border-top: 1px solid #b3b3b3;
+    padding-top: 23px;
+    margin-top: 5px;
+  }
+
+  &__badge {
+    font-family: $semibold-font;
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    width: fit-content;
+    display: flex;
+    gap: 0 4px;
+    align-items: center;
+    backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 0.5px solid #5a5a5a;
+    border-radius: 29px;
+    padding-right: 19px;
+    transition: .3s;
+
+    &:hover {
+      border: 0.5px solid #b3b3b3;
+      transition: .3s;
+    }
+
+    & > img {
+      padding: 9px;
+      border-radius: 47px;
+      background-color: rgba(199, 199, 199, 0.45);
+      border: 0.5px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.new {
+  padding: 125px 0;
 }
 
 @keyframes retreatLeftBounce {
