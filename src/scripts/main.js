@@ -1,6 +1,12 @@
-import "../styles/style.scss";
 import playIcon from "../assets/images/icons/video/play.svg";
 import pauseIcon from "../assets/images/icons/video/pause.svg";
+
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
+import "../styles/style.scss";
 
 const firstPlant = document.querySelectorAll(".intro__images img")[0];
 const secondPlant = document.querySelectorAll(".intro__images img")[1];
@@ -79,4 +85,20 @@ contents.forEach((content) => {
       card.classList.add("species__card-active");
     };
   });
+});
+
+const swiper = new Swiper(".new__slider", {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  watchSlidesProgress: true,
+});
+
+const newFavoritesBtns = Array.from(
+  document.getElementsByClassName("new__favorite")
+);
+
+newFavoritesBtns.forEach((btn) => {
+  btn.onclick = () => {
+    btn.classList.toggle("new__favorite-chosen");
+  };
 });

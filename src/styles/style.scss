@@ -983,6 +983,140 @@ body {
 
 .new {
   padding: 125px 0;
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 14px;
+    padding-bottom: 40px;
+
+    h2 {
+      font-family: "Lufga ExtraBold";
+      font-weight: 800;
+      font-size: 125px;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      font-family: $semibold-font;
+      letter-spacing: 0.01em;
+      max-width: 619px;
+      font-size: 18px;
+    }
+  }
+
+  &__inner {
+    overflow: hidden;
+  }
+
+  &__slider {
+    overflow: hidden;
+    padding: 55px;
+    margin: -55px;
+  }
+
+  &__descr {
+    position: relative;
+    width: 100%;
+  }
+
+  &__favorite {
+    box-sizing: content-box;
+    position: absolute;
+    top: 13px;
+    left: 11px;
+    width: 24px;
+    height: 24px;
+    padding: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.3);
+    border: 0.5px solid #efefef;
+    border-radius: 60px;
+
+    &::after {
+      content: url("../assets/images/icons/general/favorite-empty.svg");
+      position: absolute;
+      display: block;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-chosen::after {
+      content: url("../assets/images/icons/general/favorite-full.svg");
+      animation: chooseFavorite 0.2s ease-in-out 1;
+    }
+  }
+
+  &__item {
+    box-shadow: 0 0 55px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    padding: 10px 10px 24px 10px;
+    height: auto;
+    display: grid;
+  }
+
+  &__img {
+    border-radius: 14px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    width: 100%;
+  }
+
+  &__about {
+    display: flex;
+    gap: 0 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+    letter-spacing: -0.03em;
+    padding-top: 13px;
+  }
+
+  &__name {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  &__text {
+    font-family: "Lufga Regular";
+    font-size: 18px;
+    color: #959595;
+    padding-bottom: 14px;
+  }
+
+  &__price {
+    font-family: $semibold-font;
+    font-size: 18px;
+  }
+
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 62px;
+    background-color: $black-color;
+    border-radius: 57px;
+  }
+}
+
+.swiper-wrapper {
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  opacity: 0;
+}
+
+.swiper-slide-visible {
+  opacity: 1;
+  transition: 0.3s;
 }
 
 @keyframes retreatLeftBounce {
@@ -1081,5 +1215,14 @@ body {
 
   100% {
     transform: translateY(10px);
+  }
+}
+
+@keyframes chooseFavorite {
+  0% {
+    transform: translate(-50%, -50%) scale(3);
+  }
+  100% {
+    transform: translate(-50%, -50%), scale(1);
   }
 }
