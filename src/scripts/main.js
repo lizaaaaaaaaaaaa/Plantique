@@ -88,9 +88,22 @@ contents.forEach((content) => {
 });
 
 const swiper = new Swiper(".new__slider", {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 20,
   watchSlidesProgress: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    480: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+  modules: [Pagination, Navigation],
 });
 
 const newFavoritesBtns = Array.from(

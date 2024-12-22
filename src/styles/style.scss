@@ -985,18 +985,56 @@ body {
   padding: 125px 0;
   overflow: hidden;
 
+  @media screen and (max-width: 768px) {
+    padding: 95px 0;
+  }
+
+  @media screen and (max-width: 580px) {
+    padding: 75px 0 55px;
+  }
+
+  @media screen and (max-width: 375px) {
+    padding: 50px 0 35px;
+  }
+
   &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0 14px;
+    gap: 0 25px;
     padding-bottom: 40px;
+
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 375px) {
+      padding-bottom: 25px;
+    }
 
     h2 {
       font-family: "Lufga ExtraBold";
       font-weight: 800;
       font-size: 125px;
       letter-spacing: -0.05em;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 85px;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 580px) {
+        font-size: 65px;
+      }
+
+      @media screen and (max-width: 375px) {
+        font-size: 48px;
+      }
     }
 
     p {
@@ -1004,6 +1042,22 @@ body {
       letter-spacing: 0.01em;
       max-width: 619px;
       font-size: 18px;
+
+      @media screen and (max-width: 1024px) {
+        max-width: 419px;
+      }
+
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+      }
+
+      @media screen and (max-width: 580px) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: 320px) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -1050,6 +1104,10 @@ body {
       content: url("../assets/images/icons/general/favorite-full.svg");
       animation: chooseFavorite 0.2s ease-in-out 1;
     }
+
+    @media screen and (max-width: 375px) {
+      padding: 15px;
+    }
   }
 
   &__item {
@@ -1067,6 +1125,16 @@ body {
     display: block;
     width: 100%;
     height: 312px;
+
+    @media screen and (max-width: 768px) {
+      min-height: 252px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 375px) {
+      min-height: 202px;
+      max-height: 202px;
+    }
   }
 
   &__about {
@@ -1081,6 +1149,24 @@ body {
   &__name {
     font-size: 32px;
     line-height: 1.2;
+
+    @media screen and (max-width: 768px) {
+      font-size: 28px;
+    }
+
+    @media screen and (max-width: 580px) {
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 22px;
+      max-width: 162px;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 20px;
+      max-width: 142px;
+    }
   }
 
   &__text {
@@ -1088,21 +1174,48 @@ body {
     font-size: 18px;
     color: #959595;
     padding-bottom: 14px;
+
+    @media screen and (max-width: 580px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 14px;
+      padding-bottom: 9px;
+    }
   }
 
   &__price {
     font-family: $semibold-font;
     font-size: 18px;
+
+    @media screen and (max-width: 580px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 14px;
+    }
   }
 
   &__link {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 62px;
+    min-width: 62px;
     height: 62px;
     background-color: $black-color;
     border-radius: 57px;
+
+    @media screen and (max-width: 580px) {
+      min-width: 52px;
+      height: 52px;
+    }
+
+    @media screen and (max-width: 320px) {
+      min-width: 42px;
+      height: 42px;
+    }
   }
 }
 
@@ -1118,6 +1231,40 @@ body {
 .swiper-slide-visible {
   opacity: 1;
   transition: 0.3s;
+}
+
+.swiper-pagination {
+  position: relative;
+  padding-top: 56px;
+
+  @media screen and (max-width: 375px) {
+    padding-top: 36px;
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: #b9babc;
+  border-radius: 21px;
+  margin: 0 6px !important;
+  width: 15px;
+  height: 15px;
+  transition: 0.3s;
+
+  @media screen and (max-width: 375px) {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px !important;
+  }
+
+  &-active {
+    background-color: #101010;
+    width: 60px;
+    transition: 0.3s;
+
+    @media screen and (max-width: 375px) {
+      width: 30px;
+    }
+  }
 }
 
 @keyframes retreatLeftBounce {
