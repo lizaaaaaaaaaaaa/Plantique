@@ -22,6 +22,29 @@ body {
   margin: 0 auto;
 }
 
+.title {
+  font-family: "Lufga ExtraBold";
+  font-weight: 800;
+  font-size: 125px;
+  letter-spacing: -0.05em;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 85px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 580px) {
+    font-size: 65px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 48px;
+  }
+}
+
 .header {
   z-index: 5;
   position: absolute;
@@ -1020,29 +1043,6 @@ body {
       padding-bottom: 25px;
     }
 
-    h2 {
-      font-family: "Lufga ExtraBold";
-      font-weight: 800;
-      font-size: 125px;
-      letter-spacing: -0.05em;
-
-      @media screen and (max-width: 1024px) {
-        font-size: 85px;
-      }
-
-      @media screen and (max-width: 768px) {
-        width: 100%;
-      }
-
-      @media screen and (max-width: 580px) {
-        font-size: 65px;
-      }
-
-      @media screen and (max-width: 375px) {
-        font-size: 48px;
-      }
-    }
-
     p {
       font-family: $semibold-font;
       letter-spacing: 0.01em;
@@ -1279,12 +1279,29 @@ body {
 .collection {
   padding-bottom: 182px;
 
-  &__title {
-    font-weight: 800;
-    font-size: 125px;
-    letter-spacing: -0.05em;
+  @media screen and (max-width: 880px) {
+    padding-bottom: 132px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 82px;
+  }
+
+  @media screen and (max-width: 580px) {
+    padding-bottom: 62px;
+  }
+
+  h2 {
     padding-bottom: 68px;
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+      padding-bottom: 48px;
+    }
+
+    @media screen and (max-width: 580px) {
+      padding-bottom: 36px;
+    }
   }
 
   &__inner {
@@ -1294,6 +1311,10 @@ body {
 
     @media screen and (max-width: 768px) {
       gap: 20px;
+    }
+
+    @media screen and (max-width: 320px) {
+      gap: 15px;
     }
   }
 
@@ -1339,6 +1360,14 @@ body {
       width: 100% !important;
     }
 
+    @media screen and (max-width: 480px) {
+      height: 321px;
+    }
+
+    @media screen and (max-width: 375px) {
+      height: 291px;
+    }
+
     & > div {
       transition: all 0.3s;
     }
@@ -1350,6 +1379,10 @@ body {
       background: rgba(255, 255, 255, 0.1);
       height: fit-content;
       transition: all 0.3s;
+
+      @media screen and (max-width: 480px) {
+        padding: 10px 12px;
+      }
     }
   }
 
@@ -1364,6 +1397,11 @@ body {
     border-radius: 57px;
     background-color: transparent;
     transition: 0.3s;
+
+    @media screen and (max-width: 480px) {
+      width: 54px;
+      height: 54px;
+    }
 
     &::after {
       content: url("../assets/images/collection/icons/arrow-white.svg");
@@ -1397,6 +1435,20 @@ body {
     @media screen and (max-width: 980px) {
       font-size: 42px;
     }
+
+    @media screen and (max-width: 480px) {
+      font-size: 36px;
+      padding-bottom: 15px;
+    }
+
+    @media screen and (max-width: 375px) {
+      font-size: 32px;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 28px;
+      padding-bottom: 10px;
+    }
   }
 
   &__text {
@@ -1411,5 +1463,13 @@ body {
     font-size: 16px;
     opacity: 1;
     transition: opacity 0.3s;
+
+    @media screen and (max-width: 375px) {
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 12px;
+    }
   }
 }
