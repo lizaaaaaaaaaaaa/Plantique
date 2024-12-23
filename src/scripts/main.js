@@ -119,12 +119,16 @@ newFavoritesBtns.forEach((btn) => {
 const qualityBtn = document.getElementsByClassName("quality__btn")[0];
 const qualityVideo = document.getElementsByTagName("video")[1];
 
-qualityBtn.onclick = () => {
-  qualityBtn.classList.add("quality__btn-active");
-  qualityVideo.parentElement.classList.add("quality__video-active");
-  qualityVideo.playbackRate = 2;
-  qualityVideo.play();
-};
+[qualityVideo, qualityVideo.nextElementSibling, qualityBtn].forEach(
+  (element) => {
+    element.onclick = () => {
+      qualityBtn.classList.add("quality__btn-active");
+      qualityVideo.parentElement.classList.add("quality__video-active");
+      qualityVideo.playbackRate = 2;
+      qualityVideo.play();
+    };
+  }
+);
 
 qualityVideo.onended = () => {
   qualityBtn.classList.remove("quality__btn-active");
