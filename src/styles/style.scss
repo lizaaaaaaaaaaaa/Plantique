@@ -1094,6 +1094,7 @@ body {
     background: rgba(255, 255, 255, 0.3);
     border: 0.5px solid #efefef;
     border-radius: 60px;
+    font-size: 0;
 
     &::after {
       content: url("../assets/images/icons/general/favorite-empty.svg");
@@ -1290,6 +1291,10 @@ body {
     display: flex;
     gap: 24px 20px;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 768px) {
+      gap: 20px;
+    }
   }
 
   &__inner > div:nth-child(1) {
@@ -1323,6 +1328,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    cursor: pointer;
+    position: relative;
+
+    @media screen and (max-width: 980px) {
+      width: calc(50% - 10px) !important;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100% !important;
+    }
 
     & > div {
       transition: all 0.3s;
@@ -1338,11 +1353,50 @@ body {
     }
   }
 
+  &__link {
+    font-size: 0;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    right: 10px;
+    top: 10px;
+    border: 1px solid #fff;
+    border-radius: 57px;
+    background-color: transparent;
+    transition: 0.3s;
+
+    &::after {
+      content: url("../assets/images/collection/icons/arrow-white.svg");
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__item:hover &__link {
+    background-color: #fff;
+
+    &::after {
+      content: url("../assets/images/collection/icons/arrow-black.svg");
+      transition: 0.3s;
+    }
+  }
+
   &__name {
     font-family: "Lufga Bold", sans-serif;
     font-size: 70px;
     letter-spacing: -0.01em;
     padding-bottom: 25px;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 56px;
+    }
+
+    @media screen and (max-width: 980px) {
+      font-size: 42px;
+    }
   }
 
   &__text {
