@@ -1490,6 +1490,14 @@ body {
     @media screen and (max-width: 768px) {
       font-size: 68px;
     }
+
+    @media screen and (max-width: 600px) {
+      font-size: 48px;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 36px;
+    }
   }
 
   &__text {
@@ -1504,6 +1512,14 @@ body {
     @media screen and (max-width: 980px) {
       max-width: 816px;
     }
+
+    @media screen and (max-width: 600px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 375px) {
+      font-size: 14px;
+    }
   }
 
   &__video {
@@ -1517,6 +1533,19 @@ body {
     @media screen and (max-width: 880px) {
       width: 660px;
       margin: 63px auto 132px;
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 480px;
+      margin: 53px auto 102px;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 375px) {
+      margin: 43px auto 68px;
     }
 
     video {
@@ -1580,6 +1609,26 @@ body {
       opacity: 0;
       visibility: 0;
       transition: 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 132px;
+      height: 132px;
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 102px;
+      height: 102px;
+    }
+
+    @media screen and (max-width: 375px) {
+      width: 72px;
+      height: 72px;
+      
+      & > img {
+        width: 32px;
+        height: auto;
+      }
     }
   }
 }

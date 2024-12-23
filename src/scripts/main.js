@@ -87,7 +87,7 @@ contents.forEach((content) => {
   });
 });
 
-const swiper = new Swiper(".new__slider", {
+new Swiper(".new__slider", {
   slidesPerView: 1,
   spaceBetween: 20,
   watchSlidesProgress: true,
