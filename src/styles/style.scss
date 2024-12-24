@@ -1804,3 +1804,130 @@ body {
     }
   }
 }
+
+.footer {
+  background-image: url("../assets/images/join/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 35px;
+  margin: 10px;
+
+  &__inner {
+    padding: 20px;
+  }
+
+  &__top {
+    position: relative;
+    margin-bottom: 53px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1122px;
+      height: 2px;
+      background: radial-gradient(
+        circle,
+        rgba(204, 204, 204, 1) 22%,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+
+  &__logo {
+    display: block;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    backdrop-filter: blur(10px);
+    padding: 25px 24px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    font-family: "Lufga Bold", sans-serif;
+    font-size: 93px;
+    line-height: 1.18;
+    letter-spacing: -0.05em;
+    text-align: center;
+    margin-bottom: 53px;
+    color: #ffffff;
+  }
+
+  &__text {
+    font-family: "Lufga Light";
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+    color: #fff;
+    padding-bottom: 53px;
+  }
+
+  &__socials {
+    background-color: #ffffff;
+    padding: 53px 0;
+    border-radius: 24px;
+    position: relative;
+  }
+
+  &__list {
+    display: flex;
+    width: fit-content;
+    padding: 0 60px;
+    margin: 0 auto 40px;
+    border-radius: 50px;
+    border: 1px solid $black-color;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1074px;
+      height: 2px;
+      background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0.5) 35%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      top: 161px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__link {
+    font-family: $medium-font;
+    font-size: 25px;
+    letter-spacing: -0.01em;
+    display: block;
+    padding: 20px 40px;
+    margin: -1px 0;
+    border: 1px solid #10110e;
+    text-decoration: underline;
+    border-radius: 60px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #26b245;
+      border: 1px solid #fff;
+      color: #fff;
+      transition: 0.3s;
+    }
+  }
+
+  &__rights {
+    font-family: "Lufga Light", sans-serif;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    padding: 40px 10px 0;
+    text-align: center;
+  }
+}
