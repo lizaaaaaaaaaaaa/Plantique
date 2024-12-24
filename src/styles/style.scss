@@ -1624,11 +1624,77 @@ body {
     @media screen and (max-width: 375px) {
       width: 72px;
       height: 72px;
-      
+
       & > img {
         width: 32px;
         height: auto;
       }
+    }
+  }
+}
+
+.faq {
+  padding: 55px 0;
+
+  &__list {
+    display: grid;
+    gap: 20px 0;
+
+    & > li {
+      padding: 44px 40px;
+      border: 2px solid $black-color;
+      border-radius: 32px;
+    }
+  }
+
+  &__question {
+    display: flex;
+    gap: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+
+    & > h4 {
+      font-family: "Lufga ExtraBold", sans-serif;
+      font-size: 46px;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__btn {
+    width: 92px;
+    height: 92px;
+    border: 2px solid #000;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+
+    &-active {
+      transform: rotate(-90deg);
+      transition: 0.3s;
+    }
+  }
+
+  &__answer {
+    font-family: $semibold-font;
+    max-width: 1095px;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s;
+
+    &-active {
+      opacity: 1;
+      visibility: visible;
+      max-height: 500px;
+      transform: translateY(0);
+      transition: all 0.3s;
     }
   }
 }

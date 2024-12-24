@@ -134,3 +134,24 @@ qualityVideo.onended = () => {
   qualityBtn.classList.remove("quality__btn-active");
   qualityVideo.parentElement.classList.remove("quality__video-active");
 };
+
+const faqBtns = document.getElementsByClassName("faq__btn");
+const faqAnswers = document.getElementsByClassName("faq__answer");
+
+for (let btn = 0; btn < faqBtns.length; btn++) {
+  faqBtns[btn].onclick = () => {
+    const isActive = faqBtns[btn].classList.contains("faq__btn-active");
+
+    Array.from(faqBtns).forEach((btn) =>
+      btn.classList.remove("faq__btn-active")
+    );
+    Array.from(faqAnswers).forEach((answer) =>
+      answer.classList.remove("faq__answer-active")
+    );
+
+    if (!isActive) {
+      faqBtns[btn].classList.add("faq__btn-active");
+      faqAnswers[btn].classList.add("faq__answer-active");
+    }
+  };
+}
