@@ -1545,7 +1545,7 @@ body {
     }
 
     @media screen and (max-width: 375px) {
-      margin: 43px auto 68px;
+      margin: 43px auto 15px;
     }
 
     video {
@@ -1565,6 +1565,10 @@ body {
       video {
         opacity: 1;
         transition: 0.3s;
+      }
+
+      @media screen and (max-width: 375px) {
+        margin-bottom: 18px;
       }
     }
   }
@@ -1648,6 +1652,10 @@ body {
     display: grid;
     gap: 20px 0;
 
+    @media screen and (max-width: 375px) {
+      gap: 10px 0;
+    }
+
     & > li {
       padding: 44px 40px;
       border: 2px solid $black-color;
@@ -1659,6 +1667,19 @@ body {
 
       @media screen and (max-width: 768px) {
         padding: 28px 24px;
+      }
+
+      @media screen and (max-width: 480px) {
+        padding: 22px 20px;
+      }
+
+      @media screen and (max-width: 375px) {
+        padding: 14px 12px;
+        gap: 15px;
+      }
+
+      @media screen and (max-width: 320px) {
+        padding: 10px 8px;
       }
     }
   }
@@ -1681,11 +1702,23 @@ body {
       @media screen and (max-width: 768px) {
         font-size: 32px;
       }
+
+      @media screen and (max-width: 500px) {
+        font-size: 26px;
+      }
+
+      @media screen and (max-width: 375px) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 320px) {
+        font-size: 16px;
+      }
     }
   }
 
   &__btn {
-    width: 92px;
+    min-width: 92px;
     height: 92px;
     border: 2px solid #000;
     border-radius: 60px;
@@ -1697,6 +1730,26 @@ body {
     &-active {
       transform: rotate(-90deg);
       transition: 0.3s;
+    }
+
+    @media screen and (max-width: 500px) {
+      min-width: 72px;
+      height: 72px;
+
+      & > img {
+        width: 35px;
+        height: 36px;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      min-width: 52px;
+      height: 52px;
+
+      & > img {
+        width: 25px;
+        height: 26px;
+      }
     }
   }
 
@@ -1710,14 +1763,31 @@ body {
     max-height: 0;
     overflow: hidden;
     transform: translateY(-20px);
-    transition: all 0.3s;
+    transition: all 0.3s, font-size 0s;
+
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 375px) {
+      font-family: $medium-font;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 12px;
+    }
 
     &-active {
       opacity: 1;
       visibility: visible;
       max-height: 500px;
       transform: translateY(0);
-      transition: all 0.3s;
+      transition: all 0.3s, font-size 0s;
       padding-top: 10px;
 
       @media screen and (max-width: 980px) {
@@ -1726,6 +1796,10 @@ body {
 
       @media screen and (max-width: 768px) {
         padding-top: 20px;
+      }
+
+      @media screen and (max-width: 480px) {
+        padding-top: 10px;
       }
     }
   }
