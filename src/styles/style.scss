@@ -808,6 +808,7 @@ body {
   &__all {
     font-size: 25px;
     letter-spacing: -0.01em;
+    text-align: center;
     color: #0d0d0d;
     padding: 12.5px 40px;
     border: 1px solid #0d0d0d;
@@ -2173,6 +2174,32 @@ body {
     opacity: 1;
     transition: 0.3s;
   }
+
+  @media screen and (max-width: 820px) {
+    bottom: 49px;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 72px;
+    height: 72px;
+    bottom: 32px;
+    right: 32px;
+  }
+
+  @media screen and (max-width: 460px) {
+    width: 52px;
+    height: 52px;
+
+    & > img {
+      width: 17px;
+      height: 23px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    bottom: 22px;
+    right: 12px;
+  }
 }
 
 .tooltip {
@@ -2188,4 +2215,15 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
+
+  @media screen and (max-width: 550px) {
+    font-size: 8px;
+    padding: 6px;
+    bottom: -25px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 7px;
+    padding: 4px;
+  }
 }
