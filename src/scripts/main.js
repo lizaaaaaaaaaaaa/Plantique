@@ -155,3 +155,41 @@ for (let btn = 0; btn < faqBtns.length; btn++) {
     }
   };
 }
+
+const sections = Array.from(document.getElementsByTagName("section"));
+const sectionBtn = document.getElementsByClassName("section-btn")[0];
+
+let currentSectionIndex = 0;
+
+sectionBtn.onclick = () => {
+  currentSectionIndex++;
+
+  if (currentSectionIndex >= sections.length) {
+    currentSectionIndex = 0;
+  }
+
+  const nextSection = sections[currentSectionIndex];
+
+  window.scrollTo({
+    top: nextSection.offsetTop,
+    behavior: "smooth",
+  });
+};
+
+window.addEventListener("scroll", () => {
+  let currentActiveIndex = -1;
+
+  sections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    if (
+      rect.top <= window.innerHeight / 2 &&
+      rect.bottom >= window.innerHeight / 2
+    ) {
+      currentActiveIndex = index;
+    }
+  });
+
+  if (currentActiveIndex !== -1) {
+    currentSectionIndex = currentActiveIndex;
+  }
+});

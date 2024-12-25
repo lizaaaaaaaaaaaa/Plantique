@@ -2154,3 +2154,38 @@ body {
     }
   }
 }
+
+.section-btn {
+  position: fixed;
+  width: 92px;
+  height: 92px;
+  @include mixins.flex-center;
+  right: 49px;
+  bottom: 159px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #fff;
+  border-radius: 60px;
+  padding: 21px;
+  z-index: 10;
+  transition: 0.3s;
+
+  &:hover .tooltip {
+    opacity: 1;
+    transition: 0.3s;
+  }
+}
+
+.tooltip {
+  font-family: "Lufga Light";
+  font-size: 10px;
+  width: max-content;
+  position: absolute;
+  padding: 8px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: -35px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
